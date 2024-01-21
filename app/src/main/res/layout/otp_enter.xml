@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_login"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="450dp"
+        android:layout_height="70dp"
+        android:text="An OTP has been sent to you registered mobile number."
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="340dp"/>
+    <EditText
+        android:id="@+id/otp_enter"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/rounded_edittext"
+        android:layout_below="@id/description"
+        android:paddingStart="15dp"
+        android:textSize="20sp"
+        android:hint="Enter OTP"
+        android:textColor="@color/grey"
+        android:layout_marginTop="60dp"/>
+
+    <Button
+        android:id="@+id/resend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/otp_enter"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="25dp"
+        android:background="@android:color/transparent"
+        android:gravity="center"
+        android:text="Resend OTP"
+        android:textColor="@color/black"/>
+
+    <Button
+        android:id="@+id/otp_check"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/otp_enter"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp"
+        android:background="@drawable/rounded_button"
+        android:gravity="center"
+        android:text="Login"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
+</RelativeLayout>

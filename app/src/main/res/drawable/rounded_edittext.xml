@@ -1,0 +1,5 @@
+<!-- res/drawable/rounded_edittext_background.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#d9d9d9" /> <!-- Light grey color -->
+    <corners android:radius="8dp" /> <!-- Adjust the radius for rounded corners -->
+</shape>

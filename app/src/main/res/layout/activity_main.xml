@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_login"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/login"
+        android:layout_width="450dp"
+        android:layout_height="70dp"
+        android:text="Login"
+        android:textColor="@color/black"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="320dp"/>
+    <EditText
+        android:id="@+id/number"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/rounded_edittext"
+        android:layout_below="@id/login"
+        android:inputType="number"
+        android:maxLength="10"
+        android:paddingStart="15dp"
+        android:textSize="20sp"
+        android:hint="Enter your Mobile Number"
+        android:textColor="@color/grey"
+        android:layout_marginTop="60dp"/>
+    <Button
+        android:id="@+id/otp"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/rounded_button"
+        android:gravity="center"
+        android:layout_below="@id/number"
+        android:textSize="20sp"
+        android:text="Get OTP"
+        android:textColor="@color/white"
+        android:layout_marginTop="40dp"/>
+
+    <Button
+        android:layout_width="450dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:background="@android:color/transparent"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:text="More about GeoConnect >>" />
+
+</RelativeLayout>
