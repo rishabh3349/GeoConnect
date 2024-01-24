@@ -85,11 +85,11 @@ class OTP:AppCompatActivity() {
 
     private fun resendVerificationCode() {
         val options = PhoneAuthOptions.newBuilder(auth)
-            .setPhoneNumber(phoneNumber)       // Phone number to verify
-            .setTimeout(60L, TimeUnit.SECONDS) // Timeout and unit
-            .setActivity(this)                 // Activity (for callback binding)
+            .setPhoneNumber(phoneNumber)
+            .setTimeout(60L, TimeUnit.SECONDS)
+            .setActivity(this)
             .setCallbacks(callbacks)
-            .setForceResendingToken(resendToken)// OnVerificationStateChangedCallbacks
+            .setForceResendingToken(resendToken)
             .build()
         PhoneAuthProvider.verifyPhoneNumber(options)
     }

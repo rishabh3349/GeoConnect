@@ -40,6 +40,7 @@ class Profile : AppCompatActivity() {
         val name:EditText=findViewById(R.id.name)
         val age:EditText=findViewById(R.id.age)
         val adder:Button=findViewById(R.id.save)
+        val number = intent.getStringExtra("phoneNumber")
         adder.setOnClickListener {
             val user_name=name.text.toString().trim()
             val age=age.text.toString().trim()
@@ -51,7 +52,7 @@ class Profile : AppCompatActivity() {
                     Toast.makeText(this,"Please enter name",Toast.LENGTH_SHORT).show()
                 }
                 else{
-                    addUserToDatabase(user_name,age,currentLatitude.toString(),currentLongitude.toString(),auth.currentUser?.uid!!)
+                    addUserToDatabase(user_name,age,currentLatitude.toString(),currentLongitude.toString(),auth.currentUser?.uid!!,number.toString())
                     val intent=Intent(this,UserList::class.java)
                     startActivity(intent)
                 }
@@ -59,9 +60,9 @@ class Profile : AppCompatActivity() {
         }
     }
 
-    private fun addUserToDatabase(userName: String, age: String, currentLatitude: String, currentLongitude: String, uid: String) {
+    private fun addUserToDatabase(userName: String, age: String, currentLatitude: String, currentLongitude: String, uid: String,number: String) {
         mDbRef= FirebaseDatabase.getInstance().getReference()
-        mDbRef.child("user").child(uid).setValue(User(userName,age,currentLatitude,currentLongitude,uid))
+        mDbRef.child("user").child(uid).setValue(User(userName,age,currentLatitude,currentLongitude,uid,number))
     }
 
 

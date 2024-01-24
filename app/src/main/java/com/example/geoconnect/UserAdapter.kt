@@ -33,6 +33,7 @@ class UserAdapter(val context:Context,val userList:ArrayList<User>):
             intent.putExtra("currentLatitude",currentUser.currentLatitude)
             intent.putExtra("currentLongitude",currentUser.currentLongitude)
             intent.putExtra("uid",currentUser.uid)
+            intent.putExtra("number",currentUser.number)
             context.startActivity(intent)
         }
     }

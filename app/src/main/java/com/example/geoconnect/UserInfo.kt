@@ -2,6 +2,7 @@ package com.example.geoconnect
 
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -34,6 +35,7 @@ class UserInfo : AppCompatActivity(), OnMapReadyCallback {
         nameTextView.text = "Name: ${name}"
         val age = intent.getStringExtra("age")
         val ageTextView: TextView = findViewById(R.id.age_o)
+        val number = intent.getStringExtra("number")
         ageTextView.text = "Age: ${age}"
         mapFragment = supportFragmentManager.findFragmentById(R.id.mapView_o) as? SupportMapFragment
             ?: SupportMapFragment.newInstance().also {
@@ -43,9 +45,7 @@ class UserInfo : AppCompatActivity(), OnMapReadyCallback {
         val uid = intent.getStringExtra("uid")
         val call:Button=findViewById(R.id.call)
         call.setOnClickListener {
-            val intent=Intent(this,CallActivity::class.java)
-            intent.putExtra("name",name)
-            intent.putExtra("uid",uid)
+            val intent=Intent(Intent.ACTION_DIAL, Uri.parse("tel:"+Uri.encode(number)))
             startActivity(intent)
         }
 
